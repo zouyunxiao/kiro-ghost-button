@@ -1,0 +1,45 @@
+{
+	"name": "kiro-ghost-button",
+	"displayName": "Kiro Ghost Button",
+	"description": "在编辑器标题栏（Codex 图标旁）加一个 Kiro 幽灵图标，点一下就把 Kiro 聊天面板召唤回来。",
+	"version": "1.2.0",
+	"publisher": "local",
+	"private": true,
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.94.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "kiroGhost.focusChat",
+				"title": "召唤 Kiro 聊天面板",
+				"category": "Kiro Ghost",
+				"icon": "$(kiro)"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "kiroGhost.focusChat",
+					"group": "navigation",
+					"order": 100
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "kiroGhost.focusChat",
+				"key": "ctrl+alt+k",
+				"mac": "cmd+alt+k"
+			}
+		]
+	}
+}
